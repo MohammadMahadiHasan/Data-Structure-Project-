@@ -64,10 +64,6 @@ void linearSearch()
     }
    
   }
-void r()
-{
-  cout<<"Hello world";
-}
 int main() {
   
   linearSearch();
@@ -78,9 +74,98 @@ int main() {
     cout<<"Even index no: "<<even_index<<endl;
     int odd_index = BinarySearch(odd,5,16);
     cout<<"Odd index no: "<<odd_index<<endl;
-    r();
-    return 0;
-  return 0;
  
+    return 0;
   
 }
+/*
+#include<iostream>
+using namespace std;
+void sortAs(int arr[],int n)
+{
+     for( int j=0;j<n;j++)
+ {
+ for(int i=0;i<n-j;i++)
+ {
+    if(arr[i]>arr[i+1])
+    {
+        swap(arr[i],arr[i+1]);
+    }
+ }
+}
+  for(int i=0;i<n;i++)
+  {
+
+      cout<<arr[i];
+  }
+}
+void arraymid(int arr[],int n)
+{
+    int i=0;
+     for( int j=0;j<n;j++)
+ {
+ for( i=0;i<n-j;i++)
+ {
+    if(arr[i]>arr[i+1])
+    {
+        swap(arr[i],arr[i+1]);
+    }
+ }
+}
+cout<<endl;
+//int i=0;
+  for(i=0;i<n/2;i++)
+  {
+
+      //cout<<arr[i];
+  }
+  cout<<arr[i];
+
+}
+void insertarray(int arr[], int n)
+{
+    
+    for (int i = 0; i<n; i++) {   
+        for (int j = i+1; j <n; j++) {   
+           if(arr[i] < arr[j]) {  
+               swap(arr[i],arr[j]);
+           }   
+        }   
+    }  
+
+  for(int i=0;i<n;i++)
+  {
+
+      cout<<arr[i];
+  }
+  int i=0;
+   for(i=0;i<n/2;i++)
+  {
+
+      //cout<<arr[i];
+  }
+  cout<<endl;
+  cin>>arr[i];
+  for(int i=0;i<n;i++)
+  {
+      cout<<arr[i];
+  }
+  
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    sortAs(a,n);
+    cout<<endl;
+    arraymid(a,n);
+    cout<<endl;
+    insertarray(a,n);
+}
+*/

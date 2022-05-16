@@ -64,6 +64,10 @@ void linearSearch()
     }
    
   }
+void r()
+{
+  cout<<"Hello world";
+}
 int main() {
   
   linearSearch();
@@ -74,7 +78,9 @@ int main() {
     cout<<"Even index no: "<<even_index<<endl;
     int odd_index = BinarySearch(odd,5,16);
     cout<<"Odd index no: "<<odd_index<<endl;
- 
+    r();
     return 0;
+  return 0;
+ 
   
 }
