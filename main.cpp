@@ -10,30 +10,50 @@ using namespace std;
 //stack problem solving 2
 //circular queue code 1
 
-int BinarySearch(int a[],int size, int key)
+void BinarySearch()
 {
-    int start = 0;
-    int end = size-1;
-    int mid = start+(end-start)/2;
-    while(start <= end)
+  int n;
+  cout<<"How many element:";
+    cin>>n;
+    int a[n];
+  cout<<"Enter Elements:";
+    for(int i=0;i<n;i++)
     {
-        if(a[mid]==key)
+        cin>>a[i];
+    }
+   for( int j=0;j<n;j++)
+ {
+ for(int i=0;i<n-j;i++)
+ {
+    if(a[i]>a[i+1])
+    {
+        swap(a[i],a[i+1]);
+    }
+ }
+}
+  
+  int first,last,num,middle;
+    cout<<"Enter a number for searching:";
+   cin>>num;
+    first = 0;
+    last = n-1;
+    middle = (first+last)/2;
+    while(first <= last)
+    {
+        if(a[middle]<num)
+            first = middle+1;
+        else if(a[middle]==num)
         {
-            return mid;
-        }
-        if( a[mid]<key)
-        {
-            start = mid+1;
+            cout<<"\nThe number, "<<num<<" found at Position "<<middle+1;
+            break;
         }
         else
-        {
-            end = mid -1;
-
-        }
-        mid = start+(end-start)/2;
-
+            last = middle-1;
+        middle = (first+last)/2;
     }
-    return -1;
+    if(first>last)
+        cout<<"\nThe number, "<<num<<" is not found in given Array";
+    cout<<endl;
 }
 void linearSearch()
   {
@@ -66,19 +86,26 @@ void linearSearch()
   }
 void r()
 {
-  cout<<"Hello world";
+  cout<<"Hello Everyone!"<<endl;
+   cout<<"Welcome to our project"<<endl;
+    cout<<"We are a group of 4 people and our group members are :  "<<endl;
+    cout<<"1.Mohammad Mahadi Hasan"<<endl;
+    cout<<"2.Riad Rahman"<<endl;
+    cout<<"3.Mahbuba Rahman"<<endl;
+    cout<<"Ehteshamul Islam"<<endl;
+  cout<<endl;
+  cout<<endl;
+    cout<<"           Here our Project Begins..."<<endl;
+  ;
+  cout<<endl;
+  cout<<endl;
 }
 int main() {
-  
+   r();
   linearSearch();
   cout<<endl;
-  int even[6]={2,4,6,8,12,18};
-    int odd[5]={3,8,11,14,16};
-    int even_index = BinarySearch(even,6,18);
-    cout<<"Even index no: "<<even_index<<endl;
-    int odd_index = BinarySearch(odd,5,16);
-    cout<<"Odd index no: "<<odd_index<<endl;
-    r();
+  BinarySearch();
+   
     return 0;
   return 0;
  
