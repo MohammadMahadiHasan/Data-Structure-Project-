@@ -84,6 +84,79 @@ void linearSearch()
     }
    
   }
+
+
+
+
+void linearSearchPointer()
+  {
+    
+   int  var = 20;   // actual variable declaration.
+   int  *ip;        // pointer variable 
+
+   ip = &var;       // store address of var in pointer variable
+
+   cout << "Value of var variable: ";
+   cout << var << endl;
+
+   // print the address stored in ip pointer variable
+   cout << "Address stored in ip variable: ";
+   cout << ip << endl;
+
+   // access the value at the address available in pointer
+   cout << "Value of *ip variable: ";
+   cout << *ip << endl;
+   
+  }
+
+
+class Stack
+{
+   int top;
+   public:
+   int myStack[10]; //stack array
+  
+   Stack() { top = -1; }
+   bool push(int x);
+   int pop();
+   bool isEmpty();
+};
+   //pushes element on to the stack
+   bool Stack::push(int item)
+   {
+      if (top >= (10-1)) {
+      cout << "Stack Overflow!!!";
+      return false;
+   }
+else {
+   myStack[++top] = item;
+   cout<<item<<endl;
+   return true;
+   }
+}
+  
+//removes or pops elements out of the stack
+int Stack::pop()
+{
+   if (top < 0) {
+      cout << "Stack Underflow!!";
+      return 0;
+   }
+else {
+       int item = myStack[top--];
+      return item;
+   }
+}
+  
+//check if stack is empty
+bool Stack::isEmpty()
+{
+   return (top < 0);
+}
+
+
+
+
 void r()
 {
   cout<<"Hello Everyone!"<<endl;
@@ -102,9 +175,27 @@ void r()
 }
 int main() {
    r();
+  //existed code
   linearSearch();
   cout<<endl;
   BinarySearch();
+
+  //pointer var used
+  linearSearchPointer();
+
+
+  //Stack
+  class Stack stack;
+   cout<<"The Stack Push "<<endl;
+   stack.push(2);
+   stack.push(4);
+   stack.push(6);
+   cout<<"The Stack Pop : "<<endl;
+   while(!stack.isEmpty())
+      {
+      cout<<stack.pop()<<endl;
+      }
+   return 0;
    
     return 0;
   return 0;
