@@ -1,6 +1,7 @@
+
 #include <iostream>
 using namespace std;
-//Binary search 
+//linear search
 //Binary search 
 // linked list implementation 
 //pointer doing calculator code 
@@ -173,6 +174,104 @@ void r()
   cout<<endl;
   cout<<endl;
 }
+void arc()
+{
+  float radius, area;
+
+   cout << "\nEnter the radius of Circle : ";
+   cin>>radius;
+
+   area = 3.14 * radius * radius;
+
+   cout << "\nArea of Circle : " << area;
+  cout<<endl;
+
+}
+// Iterative C++ program to reverse a linked list
+
+/* Link list node */
+struct Node {
+	int data;
+	struct Node* next;
+	Node(int data)
+	{
+		this->data = data;
+		next = NULL;
+	}
+};
+
+struct LinkedList {
+	Node* head;
+	LinkedList() { head = NULL; }
+
+	/* Function to reverse the linked list */
+	void reverse()
+	{
+		// Initialize current, previous and next pointers
+		Node* current = head;
+		Node *prev = NULL, *next = NULL;
+
+		while (current != NULL) {
+			// Store next
+			next = current->next;
+			// Reverse current node's pointer
+			current->next = prev;
+			// Move pointers one position ahead.
+			prev = current;
+			current = next;
+		}
+		head = prev;
+	}
+
+	/* Function to print linked list */
+	void print()
+	{
+		struct Node* temp = head;
+		while (temp != NULL) {
+			cout << temp->data << " ";
+			temp = temp->next;
+		}
+	}
+
+	void push(int data)
+	{
+		Node* temp = new Node(data);
+		temp->next = head;
+		head = temp;
+	}
+};
+
+
+/* Driver code*/
+void linklist()
+{
+	/* Start with the empty list */
+	LinkedList ll;
+	ll.push(20);
+	ll.push(4);
+	ll.push(15);
+	ll.push(85);
+
+	cout << "Given linked list\n";
+	ll.print();
+
+	ll.reverse();
+
+	cout << "\nReversed Linked list \n";
+	ll.print();
+	
+}
+
+
+// c++ program to count number of nodes in
+// a circular linked list.
+
+/*structure for a node*/
+
+
+
+
+
 int main() {
    r();
   //existed code
@@ -182,6 +281,8 @@ int main() {
 
   //pointer var used
   linearSearchPointer();
+  arc();
+  //area of circle using pointer
 
 
   //Stack
@@ -195,10 +296,8 @@ int main() {
       {
       cout<<stack.pop()<<endl;
       }
-   return 0;
-   
-    return 0;
-  return 0;
+  
+ linklist();
  
   
 }
