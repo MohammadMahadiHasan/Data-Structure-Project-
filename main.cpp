@@ -814,6 +814,12 @@ Sptr->count--;
 return pp;
 }
 }
+void ty()
+{
+  cout<<endl;
+  cout<<"THE END"<<endl;
+  cout<<"Thank you"<<endl;
+}
 int main() {
    r();
   linearSearch();
@@ -829,4 +835,5 @@ int main() {
   crq();
   stack2();
   intstack();
+  ty();
 }
