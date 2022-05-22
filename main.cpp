@@ -1,17 +1,6 @@
 #include <iostream>
 using namespace std;
 #define max 50
-//linear search
-//Binary search 
-// linked list implementation 
-//pointer doing calculator code 
-// stack implementation code 
-// queue implementation code 
-//ulab bus service 
-//stack problem solving 2
-//circular queue code 1
-
-
 class queue{
  int* arr ;
  int front ;
@@ -62,6 +51,11 @@ class queue{
 
 void BinarySearch()
 {
+  int x;
+  cout<<"Press any key to continue:";
+  cin>>x;
+  cout<<endl;
+  cout<<"||This is a Binary Search section||"<<endl;
   int n;
   cout<<"How many element:";
     cin>>n;
@@ -107,7 +101,7 @@ void BinarySearch()
 }
 void linearSearch()
   {
-    
+    cout<<"This is linear Search"<<endl;
     int input[100], count, i, num;
        
     cout << "Enter Number of Elements in Array:";
@@ -138,22 +132,28 @@ void linearSearch()
 
 
 
-void linearSearchPointer()
+void Pointer()
   {
+    int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
     
-   int  var = 20;   // actual variable declaration.
-   int  *ip;        // pointer variable 
+    cout<<"This is a very simple pointer programme"<<endl;
+   int  var;   
+    cout<<"Enter the Value of the var Variable:";
+    cin>>var;
+   int  *ip;        
 
-   ip = &var;       // store address of var in pointer variable
+   ip = &var;      
 
    cout << "Value of var variable: ";
    cout << var << endl;
 
-   // print the address stored in ip pointer variable
+   
    cout << "Address stored in ip variable: ";
    cout << ip << endl;
 
-   // access the value at the address available in pointer
    cout << "Value of *ip variable: ";
    cout << *ip << endl;
    
@@ -225,6 +225,13 @@ void r()
 }
 void arc()
 {
+  cout<<endl;
+  int x;
+     cout<<"Press any key to continue:";
+  
+    cin>>x;
+    cout<<endl;
+  cout<<"Area of a circle using pointer"<<endl;
   float radius, area;
 
    cout << "\nEnter the radius of Circle : ";
@@ -253,9 +260,10 @@ struct LinkedList {
 	Node* head;
 	LinkedList() { head = NULL; }
 
-	/* Function to reverse the linked list */
+	  
 	void reverse()
 	{
+    
 		// Initialize current, previous and next pointers
 		Node* current = head;
 		Node *prev = NULL, *next = NULL;
@@ -291,11 +299,19 @@ struct LinkedList {
 };
 
 
-/* Driver code*/
+
 void linklist()
 {
-	/* Start with the empty list */
+  int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
+  cout<<"Function to reverse the linked list"<<endl;
+  
+ 
 	LinkedList ll;
+ 
+  
 	ll.push(20);
 	ll.push(4);
 	ll.push(15);
@@ -310,22 +326,18 @@ void linklist()
 	ll.print();
 	
 }
-// C++ program to delete a given key from
+
 // circular doubly linked list.
-
-
-// Structure of a Node
 struct Nodel {
 	int data;
 	struct Nodel* next;
 	struct Nodel* prev;
 };
 
-// Function to insert node in the list
+
 void insert(struct Nodel** start, int value)
 {
-	// If the list is empty, create a single node
-	// circular and doubly list
+	
 	if (*start == NULL) {
 		struct Nodel* new_node = new Nodel;
 		new_node->data = value;
@@ -334,40 +346,37 @@ void insert(struct Nodel** start, int value)
 		return;
 	}
 
-	// If list is not empty
-
-	/* Find last node */
+	
 	Nodel* last = (*start)->prev;
 
-	// Create Node dynamically
+
 	struct Nodel* new_node = new Nodel;
 	new_node->data = value;
 
-	// Start is going to be next of new_node
+	
 	new_node->next = *start;
 
-	// Make new node previous of start
+	
 	(*start)->prev = new_node;
 
-	// Make last previous of new node
+	
 	new_node->prev = last;
 
-	// Make new node next of old last
+
 	last->next = new_node;
 }
 
-// Function to delete a given node from the list
+
 void deleteNode(struct Nodel** start, int key)
 {
-	// If list is empty
+	
 	if (*start == NULL)
 		return;
 
-	// Find the required node
-	// Declare two pointers and initialize them
+	
 	struct Nodel *curr = *start, *prev_1 = NULL;
 	while (curr->data != key) {
-		// If node is not present in the list
+		
 		if (curr->next == *start) {
 			printf("\nList doesn't have node with value = %d", key);
 			return;
@@ -376,48 +385,43 @@ void deleteNode(struct Nodel** start, int key)
 		prev_1 = curr;
 		curr = curr->next;
 	}
-
-	// Check if node is the only node in list
 	if (curr->next == *start && prev_1 == NULL) {
 		(*start) = NULL;
 		free(curr);
 		return;
 	}
-
-	// If list has more than one node,
-	// check if it is the first node
 	if (curr == *start) {
-		// Move prev_1 to last node
+		
 		prev_1 = (*start)->prev;
 
-		// Move start ahead
+		
 		*start = (*start)->next;
 
-		// Adjust the pointers of prev_1 and start node
+		
 		prev_1->next = *start;
 		(*start)->prev = prev_1;
 		free(curr);
 	}
 
-	// check if it is the last node
+	
 	else if (curr->next == *start) {
-		// Adjust the pointers of prev_1 and start node
+		
 		prev_1->next = *start;
 		(*start)->prev = prev_1;
 		free(curr);
 	}
 	else {
-		// create new pointer, points to next of curr node
+		
 		struct Nodel* temp = curr->next;
 
-		// Adjust the pointers of prev_1 and temp node
+	
 		prev_1->next = temp;
 		temp->prev = prev_1;
 		free(curr);
 	}
 }
 
-// Function to display list elements
+
 void display(struct Nodel* start)
 {
 	struct Nodel* temp = start;
@@ -429,13 +433,18 @@ void display(struct Nodel* start)
 	printf("%d ", temp->data);
 }
 
-// Driver program to test above functions
+
 void lldel()
 {
-	// Start with the empty list
+  int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
+   cout<<"Link List Delatation Operation"<<endl;
+	
 	struct Nodel* start = NULL;
 
-	// Created linked list will be 4->5->6->7->8
+	
 	insert(&start, 4);
 	insert(&start, 5);
 	insert(&start, 6);
@@ -445,22 +454,21 @@ void lldel()
 	printf("List Before Deletion: ");
 	display(start);
 
-	// Delete the node which is not present in list
+	
 	deleteNode(&start, 9);
 	printf("\nList After Deletion: ");
 	display(start);
 
-	// Delete the first node
+	
 	deleteNode(&start, 4);
 	printf("\nList After Deleting %d: ", 4);
 	display(start);
 
-	// Delete the last node
+	
 	deleteNode(&start, 8);
 	printf("\nList After Deleting %d: ", 8);
 	display(start);
 
-	// Delete the middle node
 	deleteNode(&start, 6);
 	printf("\nList After Deleting %d: ", 6);
 	display(start);
@@ -469,13 +477,14 @@ void lldel()
 }
 
 
-// c++ program to count number of nodes in
-// a circular linked list.
 
-/*structure for a node*/
 
 void quiz()
 {
+  int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
   cout<<"Queue code Implementation"<<endl;
   queue q ;
      q.enqueue(5);
@@ -520,7 +529,7 @@ class Queue {
     front = -1;
     rear = -1;
   }
-  // Check if the queue is full
+  
   bool isFull() {
     if (front == 0 && rear == SIZE - 1) {
       return true;
@@ -530,14 +539,14 @@ class Queue {
     }
     return false;
   }
-  // Check if the queue is empty
+  
   bool isEmpty() {
     if (front == -1)
       return true;
     else
       return false;
   }
-  // Adding an element
+  
   void enQueue(int element) {
     if (isFull()) {
       cout << "Queue is full";
@@ -549,7 +558,7 @@ class Queue {
          << "Inserted " << element << endl;
     }
   }
-  // Removing an element
+  
   int deQueue() {
     int element;
     if (isEmpty()) {
@@ -561,8 +570,7 @@ class Queue {
         front = -1;
         rear = -1;
       }
-      // Q has only one element,
-      // so we reset the queue after deleting it.
+      
       else {
         front = (front + 1) % SIZE;
       }
@@ -571,7 +579,7 @@ class Queue {
   }
 
   void display() {
-    // Function to display status of Circular Queue
+   
     int i;
     if (isEmpty()) {
       cout << endl
@@ -592,9 +600,14 @@ class Queue {
 void crq()
 {
   cout<<endl;
+  int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
+  cout<<endl;
   Queue q;
 
-  // Fails because front = -1
+  
   q.deQueue();
 
   q.enQueue(1);
@@ -603,7 +616,7 @@ void crq()
   q.enQueue(4);
   q.enQueue(5);
 
-  // Fails to enqueue because front == 0 && rear == SIZE - 1
+  
   q.enQueue(6);
 
   q.display();
@@ -620,112 +633,19 @@ void crq()
 
   q.display();
 
-  // Fails to enqueue because front == rear + 1
+  
   q.enQueue(8);
 
 }
-// Stack implementation in C++
-
-#define MAX 10
-int size = 0;
-
-// Creating a stack
-struct stack {
-  int items[MAX];
-  int top;
-};
-typedef struct stack st;
-
-void createEmptyStack(st *s) {
-  s->top = -1;
-}
-
-// Check if the stack is full
-int isfull(st *s) {
-  if (s->top == MAX - 1)
-    return 1;
-  else
-    return 0;
-}
-
-// Check if the stack is empty
-int isempty(st *s) {
-  if (s->top == -1)
-    return 1;
-  else
-    return 0;
-}
-
-// Add elements into stack
-void push(st *s, int newitem) {
-  if (isfull(s)) {
-    cout << "STACK FULL";
-  } else {
-    s->top++;
-    s->items[s->top] = newitem;
-  }
-  size++;
-}
-
-// Remove element from stack
-void pop(st *s) {
-  if (isempty(s)) {
-    cout << "\n STACK EMPTY \n";
-  } else {
-    cout << "Item popped= " << s->items[s->top];
-    s->top--;
-  }
-  size--;
-  cout << endl;
-}
-
-// Print elements of stack
-void printStack(st *s) {
-  printf("Stack: ");
-  for (int i = 0; i < size; i++) {
-    cout << s->items[i] << " ";
-  }
-  cout << endl;
-}
-
-// Driver code
-void stack2() {
-  cout<<endl;
-  cout<<"Stack 2"<<endl;
-  int ch;
-  st *s = (st *)malloc(sizeof(st));
-
-  createEmptyStack(s);
-
-  push(s, 1);
-  push(s, 2);
-  push(s, 3);
-  push(s, 4);
-
-  printStack(s);
-
-  pop(s);
-
-  cout << "\nAfter popping out\n";
-  printStack(s);
-}
-
-int main() {
-   r();
-  //existed code
-  linearSearch();
-  cout<<endl;
-  BinarySearch();
-
-  //pointer var used
-  linearSearchPointer();
-  arc();
-   linklist();
-  cout<<endl;
-  //area of circle using pointer
 
 
-  //Stack
+
+void stack1()
+{
+  int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
   class Stack stack;
    cout<<"The Stack Push "<<endl;
    stack.push(2);
@@ -736,11 +656,177 @@ int main() {
       {
       cout<<stack.pop()<<endl;
       }
-  quiz();
-  
-cout<<"link list delatation";
+}
 
- lldel();
+#define M 100
+typedef struct{
+int count;
+int top;
+char items[M]; 
+}STACK;
+void push(STACK *, char,int);
+int pop(STACK *);
+
+void stack2()
+{
+  cout<<endl;
+  int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
+  int STACKSIZE;
+  cout<<"Stack Implementation using Stack"<<endl;
+  cout<<"How many words:"<<endl;
+  cin>>STACKSIZE;
+char p;
+  int i;
+STACK s;
+s.top = -1; 
+s.count = 0; 
+
+
+
+
+cout<<endl;
+printf("Enter the %d stack characters:\n",STACKSIZE);
+for(i=0;i<= STACKSIZE-1;i++){
+cin>>p;
+push(&s,p,STACKSIZE);
+}
+  
+cout<<"\n\nStack contains the following items\n";
+for(i=0;i<= STACKSIZE-1;i++){
+p=pop(&s);
+cout<<" "<<p;
+}
+  cout<<endl;
+cout<<"Total characters after push and pop "<<s.count<<endl;
+}
+
+
+
+void push(STACK *Sptr, char ps,int STACKSIZE)
+{
+if(Sptr->top == STACKSIZE-1){
+printf("Stack is full\n");
+printf("There are %d items in the stack\n", Sptr->count);
+return; 
+}
+else {
+Sptr->top++;
+Sptr->items[Sptr->top]= ps;
+Sptr->count++;
+}
+}
+
+
+
+int pop(STACK *Sptr)
+{
+char pp;
+if(Sptr->top == -1){
+printf("Stack is empty\n");
+return -1;
+
+}
+else {
+pp = Sptr->items[Sptr->top];
+Sptr->top--;
+Sptr->count--;
+return pp;
+}
+}
+
+#define Max 1000
+typedef struct{
+int count;
+int top;
+int items[Max];
+}S;
+void push(S *, int,int);
+int pop(S *);
+void intstack()
+{
+  int x;
+     cout<<"Press any key to continue:";
+    cin>>x;
+    cout<<endl;
+    int STACKSIZE;
+    cout<<"How many Elements in the stack"<<endl;
+    cin>>STACKSIZE;
+int p, i;
+
+S s;
+s.top = -1; 
+s.count = 0; 
+
+
+
+
+printf("Enter the %d stack items\n",STACKSIZE);
+for(i=0;i<= STACKSIZE-1;i++){
+scanf("%d",&p);
+push(&s,p,STACKSIZE);
+}
+
+cout<<"popping and printing the items in the stack"<<endl;
+printf("\n\nStack contains the following items\n");
+for(i=0;i<= STACKSIZE-1;i++){
+p=pop(&s);
+printf("%d\t",p);
+}
+cout<<endl;
+cout<<"Element left after pop and push "<<s.count;
+
+}
+
+
+
+
+
+void push(S *Sptr, int ps,int STACKSIZE) 
+{
+if(Sptr->top == STACKSIZE-1){
+printf("Stack is full\n");
+printf("There are %d items in the stack\n", Sptr->count);
+return; 
+}
+else {
+Sptr->top++;
+Sptr->items[Sptr->top]= ps;
+Sptr->count++;
+}
+}
+
+
+
+int pop(S *Sptr)
+{
+int pp;
+if(Sptr->top == -1){
+printf("Stack is empty\n");
+return -1; 
+}
+else {
+pp = Sptr->items[Sptr->top];
+Sptr->top--;
+Sptr->count--;
+return pp;
+}
+}
+int main() {
+   r();
+  linearSearch();
+  cout<<endl;
+  BinarySearch();
+  Pointer();
+  arc();
+   linklist();
+  cout<<endl;
+   stack1();
+  quiz();
+   lldel();
   crq();
   stack2();
+  intstack();
 }
